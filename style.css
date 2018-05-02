@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  color: black;
+}
+
+.title {
+  font-family: 'Shrikhand', cursive;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 12px;
+}
+
+.title a {
+  color: #ffd500;
+}
+
+.title a:hover {
+  background-color: yellow;
+  color: black;
+}
+.postTitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+}
+
+.postTitle a {
+  color: black;
+}
+
+.postTitle a:hover {
+  color: black;
+  text-decoration: underline;
+  background-color: yellow;
+}
+
+.hL {
+  background-color: yellow;
+}
+/*#grad {
+background: linear-gradient(#B066FE, #ED1C24) no-repeat center center fixed;
+background-size: cover;
+}*/
