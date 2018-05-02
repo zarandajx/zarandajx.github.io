@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div>
+{% for post in site.posts %}
+
+  <!-- the title that links to post -->
+  <h2 class="postTitle">
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </h2>
+
+    <!-- the date -->
+    {{ post.excerpt }}
+    <p>
+      {{ post.date | date_to_long_string }}
+    </p>
+
+
+{% endfor %}
+</div>
