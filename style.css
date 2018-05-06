@@ -5,6 +5,10 @@
   color: black;
 }
 
+.lede {
+  font-size: 16.5px;
+}
+
 .title {
   font-family: 'Shrikhand', cursive;
   text-transform: uppercase;
@@ -38,6 +42,10 @@
 
 .hL {
   background-color: yellow;
+}
+
+blockquote q {
+  font-size: 14px;
 }
 /*#grad {
 background: linear-gradient(#B066FE, #ED1C24) no-repeat center center fixed;
