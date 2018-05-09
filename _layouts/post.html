@@ -1,12 +1,97 @@
----
-layout: default
----
-<h2 class="postTitle">
-  {{ page.title }}
-</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ site.title }}
+    </title>
 
-{{ content }}
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
 
-<p>
-  {{ page.date | date: "%a, %B %-d %Y"}}
-</p>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body id="grad">
+    <div class="title">
+      <a href="{{ site.baseurl }}/">
+        {{ site.title }}
+      </a>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <!--empty div-->
+        </div>
+        <div class="col-md-8">
+          <h2 class="postTitle">
+            {{ page.title }}
+          </h2>
+
+          {{ content }}
+
+          <p>
+            {{ page.date | date: "%a, %B %-d %Y"}}
+          </p>
+
+        </div>
+
+
+        <div class="col-md-2">
+          <!--final empty div-->
+        </div>
+      </div>
+    </div>
+
+<!--
+    <div class="container">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+        <h3>Archive</h3>
+        {% assign currentYear = site.time | date: "%Y" %}
+        {% assign currentMonth = site.time | date: "%B" %}
+        {% for post in site.posts %}
+
+        {% assign postYear = post.date | date: "%Y" %}
+        {% assign postMonth = post.date  | date: "%B" %}
+
+        {% if forloop.first %}
+        <li> {{ postYear}}
+            <ul>
+                <li data-toggle="collapse" data-target="#archive" aria-expanded="false"> {{ postMonth }}
+                    <ul id="archive" aria-expanded="true" class="collapse">
+        {% endif %}
+
+        {% if (postYear == currentYear and postMonth == currentMonth) or forloop.first %}
+            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endif %}
+
+        {% if postYear == currentYear and postMonth != currentMonth %}
+            </ul></li>
+            <li data-toggle="collapse" data-target="#archive" aria-expanded="false"> {{ postMonth }}
+                <ul id="archive">
+                    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endif %}
+
+        {% if postYear != currentYear %}
+            </ul></li></ul></li>
+                <li> {{ postYear}}
+                    <ul>
+                        <li data-toggle="collapse" data-target="#archive" aria-expanded="false"> {{ postMonth }}
+                            <ul id="archive">
+                                <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% assign currentYear = postYear %}
+        {% assign currentMonth = postMonth %}
+        {% endfor %}
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+-->
+  </body>
+</html>
