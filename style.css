@@ -9,6 +9,17 @@
   font-size: 16.5px;
 }
 
+.carousel-caption h3 {
+  text-shadow: 2px 4px 3px rgba(0,0,0,1);
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.carousel-caption p {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .title {
   font-family: 'Shrikhand', cursive;
   text-transform: uppercase;
@@ -40,12 +51,26 @@
   background-color: yellow;
 }
 
+.postImg {
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+}
+
 .hL {
   background-color: yellow;
 }
 
 blockquote q {
   font-size: 14px;
+}
+
+li a {
+  color: black;
+}
+
+li {
+  list-style-type: none;
 }
 /*#grad {
 background: linear-gradient(#B066FE, #ED1C24) no-repeat center center fixed;
